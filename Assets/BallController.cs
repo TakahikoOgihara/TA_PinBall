@@ -35,10 +35,10 @@ public class BallController : MonoBehaviour
     //other.tag is not available, then this.tag is used.
     private void OnCollisionEnter(Collision other)
     {
-        if (this.tag == "LargeCloudTag") { score += 20.0f; } 
-        else if (this.tag == "SmallCloudTag") { score += 10.0f; }
-        else if (this.tag == "LargeStarTag") { score += 40.0f; }
-        else if (this.tag == "SmallStarTag") { score += 5.0f; }
+        if (other.gameObject.tag == "LargeCloudTag") { score += 20.0f; } 
+        else if (other.gameObject.tag == "SmallCloudTag") { score += 10.0f; }
+        else if (other.gameObject.tag == "LargeStarTag") { score += 40.0f; }
+        else if (other.gameObject.tag == "SmallStarTag") { score += 5.0f; }
 
         scoreText.GetComponent<Text>().text = "Score:" + score;
     }
